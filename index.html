@@ -1,1 +1,294 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>種籽團營隊遊戲</title>
 
+<style>
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+}
+
+body {
+  overflow: hidden;
+  color: white;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.9) 0 45px, transparent 46px),
+    radial-gradient(circle at 78% 22%, rgba(255,255,255,.9) 0 55px, transparent 56px),
+    linear-gradient(180deg, #75c8ff 0%, #a8e0ff 47%, #79d36a 47%, #4caf50 100%);
+}
+
+/* 背景寶可夢風格 */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .22;
+}
+
+.monster {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  filter: drop-shadow(0 12px 18px rgba(0,0,0,.25));
+}
+
+.m1 {
+  left: 4vw;
+  top: 12vh;
+  background: #ffd84a;
+}
+
+.m1::before {
+  content: "";
+  position: absolute;
+  left: 35px;
+  top: -50px;
+  width: 36px;
+  height: 100px;
+  background: #ffd84a;
+  transform: rotate(-25deg);
+  border-radius: 50%;
+  box-shadow: 110px 45px 0 #ffd84a;
+}
+
+.m2 {
+  right: 5vw;
+  top: 14vh;
+  background: #6bc9ff;
+}
+
+.m2::before {
+  content: "";
+  position: absolute;
+  left: 42px;
+  top: -25px;
+  width: 42px;
+  height: 60px;
+  background: #6bc9ff;
+  border-radius: 50%;
+  box-shadow: 92px 0 0 #6bc9ff;
+}
+
+.m3 {
+  left: 6vw;
+  bottom: 9vh;
+  background: #ff9a42;
+}
+
+.m3::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  bottom: 22px;
+  width: 82px;
+  height: 46px;
+  background: #ffdf4a;
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+
+.m4 {
+  right: 7vw;
+  bottom: 10vh;
+  background: #78d85a;
+}
+
+.m4::before {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: -42px;
+  width: 98px;
+  height: 62px;
+  background: #4faf3f;
+  border-radius: 50%;
+}
+
+.face::after {
+  content: "";
+  position: absolute;
+  left: 64px;
+  top: 90px;
+  width: 20px;
+  height: 20px;
+  background: #222;
+  border-radius: 50%;
+  box-shadow: 70px 0 0 #222;
+}
+
+.game {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter {
+  font-size: clamp(18px, 3.8vw, 30px);
+  font-weight: 900;
+  color: #fff8cc;
+  background: rgba(34,52,92,.45);
+  padding: 10px 20px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 0 rgba(0,0,0,.25);
+}
+
+.word {
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 16px;
+  color: white;
+  word-break: keep-all;
+  text-shadow:
+    -5px -5px 0 #26457a,
+     5px -5px 0 #26457a,
+    -5px  5px 0 #26457a,
+     5px  5px 0 #26457a,
+     0 10px 20px rgba(0,0,0,.32);
+}
+
+.buttons {
+  display: flex;
+  gap: 18px;
+  width: min(92vw, 820px);
+}
+
+button {
+  flex: 1;
+  min-height: 78px;
+  border: 4px solid #233e77;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #ffd84a, #ffca1c);
+  color: #233e77;
+  font-size: clamp(26px, 6vw, 44px);
+  font-weight: 900;
+  box-shadow: 0 8px 0 #c69a11, 0 12px 24px rgba(0,0,0,.2);
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 5px 0 #c69a11;
+}
+
+.prev {
+  background: linear-gradient(180deg, #ff6464, #ef3e3e);
+  color: white;
+  border-color: #7e1b1b;
+  box-shadow: 0 8px 0 #b22828, 0 12px 24px rgba(0,0,0,.2);
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+  <div class="monster m1 face"></div>
+  <div class="monster m2 face"></div>
+  <div class="monster m3 face"></div>
+  <div class="monster m4 face"></div>
+</div>
+
+<main class="game">
+  <div class="counter" id="counter">第 1 / 1 個詞彙</div>
+  <div class="word" id="word">開始</div>
+
+  <div class="buttons">
+    <button class="prev" onclick="prevWord()">上一個</button>
+    <button onclick="nextWord()">下一個</button>
+  </div>
+</main>
+
+<script>
+const words = [
+  "爸爸","媽媽","哥哥","姐姐","弟弟","妹妹","老師","同學","朋友","醫生","護士","警察","消防員","司機","店員","廚師","農夫","郵差","船長","機長",
+  "白飯","炒飯","飯糰","便當","麵包","吐司","蛋糕","餅乾","布丁","糖果","棉花糖","巧克力","冰淇淋","爆米花","泡麵","牛肉麵","麵線","水餃","湯圓","粽子",
+  "漢堡","薯條","披薩","熱狗","雞排","雞腿","雞蛋","茶葉蛋","火鍋","貢丸","蘿蔔糕","蚵仔煎","鹹酥雞","三明治","壽司","起司","果凍","優格","奶油","蜂蜜",
+  "蘋果","香蕉","西瓜","草莓","葡萄","芒果","鳳梨","橘子","柳丁","木瓜","檸檬","番茄","玉米","南瓜","白菜","青菜","茄子","蘿蔔","苦瓜","絲瓜","黃瓜",
+  "可樂","牛奶","豆漿","果汁","奶茶","綠茶","咖哩","米飯","椰子","榴槤",
+  "小狗","貓咪","兔子","老鼠","老虎","獅子","大象","猴子","熊貓","企鵝","海豚","鯨魚","烏龜","青蛙","蝴蝶","蜜蜂","螞蟻","鴨子","孔雀","斑馬",
+  "鱷魚","河馬","無尾熊","貓頭鷹","金魚","章魚","螃蟹","蛇","蝸牛","公雞","母雞","小鳥","松鼠","狐狸","綿羊","乳牛","馬","豬","恐龍",
+  "長頸鹿","袋鼠","刺蝟","水母","蝦子","烏鴉","鴿子","羊","牛","雞","鵝","蠶寶寶","毛毛蟲","蜘蛛","蝙蝠","虎鯨",
+  "書包","課本","作業本","鉛筆","橡皮擦","尺","鉛筆盒","彩色筆","蠟筆","粉筆","白板","黑板","剪刀","膠水","膠帶","紙杯","紙箱","紙張","書架","故事書",
+  "圖畫紙","便條紙","書籤","圓規","三角板","字典","講桌","桌子","椅子",
+  "杯子","碗","盤子","筷子","湯匙","叉子","鍋子","菜刀","水壺","便當盒","雨傘","雨衣","口罩","帽子","鞋子","襪子","外套","手套","衣服","背包",
+  "鑰匙","鏡子","時鐘","鬧鐘","手機","電腦","電視","冰箱","洗衣機","電風扇","吹風機","微波爐","烤箱","電鍋","電話","相機","手錶","眼鏡","牙刷",
+  "牙膏","毛巾","肥皂","枕頭","棉被","床","沙發","垃圾桶","衛生紙","掃把","拖把","水桶","水龍頭","門","窗戶","窗簾","樓梯","屋頂","地板",
+  "玩具","娃娃","積木","拼圖","卡片","撲克牌","骰子","皮球","氣球","泡泡","風箏","溜滑梯","鞦韆","球鞋","運動鞋","望遠鏡","日曆","日記","信封","郵票",
+  "公車","火車","飛機","汽車","機車","腳踏車","捷運","高鐵","船","輪船","帆船","救護車","消防車","警車","計程車","垃圾車","卡車","校車","直升機","降落傘",
+  "學校","教室","操場","圖書館","廁所","餐廳","公園","動物園","海邊","游泳池","醫院","警察局","消防局","超市","市場","夜市","車站","電影院","博物館","郵局",
+  "便利商店","銀行","書店","廚房","客廳","房間","浴室","陽台","山","河邊","機場","寺廟","城堡","鬼屋","迷宮","森林","農場","花園","樂園","溫泉",
+  "水上市場","菜市場","五金行","馬路","路燈","鐵橋","鐵門","鐵路","大門","門口",
+  "太陽","月亮","星星","地球","天空","雲朵","彩虹","雨","風","颱風","地震","瀑布","石頭","木頭","樹木","樹葉","花朵","花瓶","蓮花","梅花",
+  "竹子","種子","稻草","泥土","沙子","海水","春天","夏天","秋天","冬天","早上","晚上","星期一","星期日","雪人","火山",
+  "過年","紅包","鞭炮","年糕","年獸","中秋節","月餅","端午節","龍舟","聖誕樹","聖誕節","生日","禮物","煙火","國旗","台灣","越南","泰國","印尼","菲律賓",
+  "馬來西亞","新加坡","緬甸","柬埔寨","傳統服裝","香蕉葉","元宵","燈籠","園遊會",
+  "籃球","棒球","足球","網球","羽毛球","乒乓球","球拍","象棋","鋼琴","口琴","鼓棒","魔術","寶藏","鑽石","珠子","夾子","抽屜","盒子","袋子",
+  "口袋","翅膀","鼻子","眼睛","嘴巴","頭髮","指甲","輪胎","骨頭","荷包蛋","關東煮","甜甜圈","蔥油餅","千層蛋糕","招財貓","機器人","七巧板"
+];
+
+let order = [...words];
+
+for (let i = order.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [order[i], order[j]] = [order[j], order[i]];
+}
+
+let index = 0;
+
+function update() {
+  const currentWord = order[index];
+  const wordEl = document.getElementById("word");
+  const counterEl = document.getElementById("counter");
+
+  wordEl.textContent = currentWord;
+  counterEl.textContent = `第 ${index + 1} / ${order.length} 個詞彙`;
+
+  const len = [...currentWord].length;
+
+  if (len <= 2) {
+    wordEl.style.fontSize = "clamp(260px, 62vw, 620px)";
+    wordEl.style.letterSpacing = "-0.10em";
+  } else if (len === 3) {
+    wordEl.style.fontSize = "clamp(145px, 34vw, 310px)";
+    wordEl.style.letterSpacing = "-0.05em";
+  } else if (len === 4) {
+    wordEl.style.fontSize = "clamp(118px, 28vw, 240px)";
+    wordEl.style.letterSpacing = "-0.03em";
+  } else {
+    wordEl.style.fontSize = "clamp(92px, 20vw, 180px)";
+    wordEl.style.letterSpacing = "0";
+  }
+}
+
+function nextWord() {
+  index++;
+  if (index >= order.length) index = 0;
+  update();
+}
+
+function prevWord() {
+  index--;
+  if (index < 0) index = order.length - 1;
+  update();
+}
+
+update();
+</script>
+
+</body>
+</html>
