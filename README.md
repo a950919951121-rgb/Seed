@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>種籽團營隊</title>
+<title>種籽團營隊遊戲</title>
 
 <style>
 html, body {
@@ -17,31 +17,31 @@ body {
   overflow: hidden;
   color: white;
   background:
-    radial-gradient(circle at 15% 18%, rgba(255,255,255,.9) 0 40px, transparent 41px),
-    radial-gradient(circle at 85% 22%, rgba(255,255,255,.9) 0 40px, transparent 41px),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.9) 0 45px, transparent 46px),
+    radial-gradient(circle at 78% 22%, rgba(255,255,255,.9) 0 55px, transparent 56px),
     linear-gradient(180deg, #75c8ff 0%, #a8e0ff 47%, #79d36a 47%, #4caf50 100%);
 }
 
-/* 背景寶可夢風格圖案 */
+/* 背景寶可夢風格 */
 .bg {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: .25;
+  opacity: .22;
 }
 
 .monster {
   position: absolute;
-  width: 210px;
-  height: 210px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   filter: drop-shadow(0 12px 18px rgba(0,0,0,.25));
 }
 
 .m1 {
   left: 4vw;
-  top: 10vh;
+  top: 12vh;
   background: #ffd84a;
 }
 
@@ -49,13 +49,13 @@ body {
   content: "";
   position: absolute;
   left: 35px;
-  top: -48px;
-  width: 35px;
-  height: 95px;
+  top: -50px;
+  width: 36px;
+  height: 100px;
   background: #ffd84a;
   transform: rotate(-25deg);
   border-radius: 50%;
-  box-shadow: 105px 45px 0 #ffd84a;
+  box-shadow: 110px 45px 0 #ffd84a;
 }
 
 .m2 {
@@ -67,13 +67,13 @@ body {
 .m2::before {
   content: "";
   position: absolute;
-  left: 40px;
+  left: 42px;
   top: -25px;
-  width: 40px;
+  width: 42px;
   height: 60px;
   background: #6bc9ff;
   border-radius: 50%;
-  box-shadow: 90px 0 0 #6bc9ff;
+  box-shadow: 92px 0 0 #6bc9ff;
 }
 
 .m3 {
@@ -85,10 +85,10 @@ body {
 .m3::after {
   content: "";
   position: absolute;
-  right: -40px;
-  bottom: 20px;
-  width: 80px;
-  height: 45px;
+  right: -42px;
+  bottom: 22px;
+  width: 82px;
+  height: 46px;
   background: #ffdf4a;
   border-radius: 50%;
   transform: rotate(-20deg);
@@ -103,10 +103,10 @@ body {
 .m4::before {
   content: "";
   position: absolute;
-  left: 58px;
-  top: -40px;
-  width: 95px;
-  height: 60px;
+  left: 60px;
+  top: -42px;
+  width: 98px;
+  height: 62px;
   background: #4faf3f;
   border-radius: 50%;
 }
@@ -114,13 +114,13 @@ body {
 .face::after {
   content: "";
   position: absolute;
-  left: 62px;
-  top: 88px;
+  left: 64px;
+  top: 90px;
   width: 20px;
   height: 20px;
   background: #222;
   border-radius: 50%;
-  box-shadow: 66px 0 0 #222;
+  box-shadow: 70px 0 0 #222;
 }
 
 .game {
@@ -129,7 +129,7 @@ body {
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  padding: 32px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,29 +137,29 @@ body {
 }
 
 .counter {
-  font-size: clamp(22px, 5vw, 38px);
+  font-size: clamp(18px, 3.8vw, 30px);
   font-weight: 900;
   color: #fff8cc;
   background: rgba(34,52,92,.45);
   padding: 10px 20px;
   border-radius: 999px;
-  margin-bottom: 32px;
+  margin-bottom: 22px;
   text-shadow: 0 2px 0 rgba(0,0,0,.25);
 }
 
 .word {
-  font-size: clamp(72px, 19vw, 170px);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1;
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 16px;
   color: white;
+  word-break: keep-all;
   text-shadow:
-    -4px -4px 0 #26457a,
-     4px -4px 0 #26457a,
-    -4px  4px 0 #26457a,
-     4px  4px 0 #26457a,
-     0 8px 18px rgba(0,0,0,.3);
+    -5px -5px 0 #26457a,
+     5px -5px 0 #26457a,
+    -5px  5px 0 #26457a,
+     5px  5px 0 #26457a,
+     0 10px 20px rgba(0,0,0,.32);
 }
 
 .buttons {
@@ -170,12 +170,12 @@ body {
 
 button {
   flex: 1;
-  min-height: 96px;
+  min-height: 78px;
   border: 4px solid #233e77;
   border-radius: 28px;
   background: linear-gradient(180deg, #ffd84a, #ffca1c);
   color: #233e77;
-  font-size: clamp(32px, 8vw, 60px);
+  font-size: clamp(26px, 6vw, 44px);
   font-weight: 900;
   box-shadow: 0 8px 0 #c69a11, 0 12px 24px rgba(0,0,0,.2);
 }
@@ -251,8 +251,28 @@ for (let i = order.length - 1; i > 0; i--) {
 let index = 0;
 
 function update() {
-  document.getElementById("word").textContent = order[index];
-  document.getElementById("counter").textContent = `第 ${index + 1} / ${order.length} 個詞彙`;
+  const currentWord = order[index];
+  const wordEl = document.getElementById("word");
+  const counterEl = document.getElementById("counter");
+
+  wordEl.textContent = currentWord;
+  counterEl.textContent = `第 ${index + 1} / ${order.length} 個詞彙`;
+
+  const len = [...currentWord].length;
+
+  if (len <= 2) {
+    wordEl.style.fontSize = "clamp(260px, 62vw, 620px)";
+    wordEl.style.letterSpacing = "-0.10em";
+  } else if (len === 3) {
+    wordEl.style.fontSize = "clamp(145px, 34vw, 310px)";
+    wordEl.style.letterSpacing = "-0.05em";
+  } else if (len === 4) {
+    wordEl.style.fontSize = "clamp(118px, 28vw, 240px)";
+    wordEl.style.letterSpacing = "-0.03em";
+  } else {
+    wordEl.style.fontSize = "clamp(92px, 20vw, 180px)";
+    wordEl.style.letterSpacing = "0";
+  }
 }
 
 function nextWord() {
