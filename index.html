@@ -272,8 +272,9 @@ function update() {
   const len = [...currentWord].length;
 
   if (len <= 2) {
-    wordEl.style.fontSize = "clamp(210px, 50vw, 480px)";
-    wordEl.style.letterSpacing = "-0.08em";
+  wordEl.style.fontSize = "clamp(180px, 43vw, 400px)";
+  wordEl.style.letterSpacing = "-0.06em";
+  }
   } else if (len === 3) {
     wordEl.style.fontSize = "clamp(145px, 34vw, 310px)";
     wordEl.style.letterSpacing = "-0.05em";
