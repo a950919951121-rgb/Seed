@@ -3,199 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>種籽團營隊遊戲</title>
-
+<title>種籽團營隊遊戲｜注音圖片輔助版</title>
 <style>
-html, body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
-}
-
-body {
-  overflow: hidden;
-  color: white;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.9) 0 45px, transparent 46px),
-    radial-gradient(circle at 78% 22%, rgba(255,255,255,.9) 0 55px, transparent 56px),
-    linear-gradient(180deg, #75c8ff 0%, #a8e0ff 47%, #79d36a 47%, #4caf50 100%);
-}
-
-/* 背景寶可夢風格 */
-.bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: .22;
-}
-
-.monster {
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  filter: drop-shadow(0 12px 18px rgba(0,0,0,.25));
-}
-
-.m1 {
-  left: 4vw;
-  top: 12vh;
-  background: #ffd84a;
-}
-
-.m1::before {
-  content: "";
-  position: absolute;
-  left: 35px;
-  top: -50px;
-  width: 36px;
-  height: 100px;
-  background: #ffd84a;
-  transform: rotate(-25deg);
-  border-radius: 50%;
-  box-shadow: 110px 45px 0 #ffd84a;
-}
-
-.m2 {
-  right: 5vw;
-  top: 14vh;
-  background: #6bc9ff;
-}
-
-.m2::before {
-  content: "";
-  position: absolute;
-  left: 42px;
-  top: -25px;
-  width: 42px;
-  height: 60px;
-  background: #6bc9ff;
-  border-radius: 50%;
-  box-shadow: 92px 0 0 #6bc9ff;
-}
-
-.m3 {
-  left: 6vw;
-  bottom: 9vh;
-  background: #ff9a42;
-}
-
-.m3::after {
-  content: "";
-  position: absolute;
-  right: -42px;
-  bottom: 22px;
-  width: 82px;
-  height: 46px;
-  background: #ffdf4a;
-  border-radius: 50%;
-  transform: rotate(-20deg);
-}
-
-.m4 {
-  right: 7vw;
-  bottom: 10vh;
-  background: #78d85a;
-}
-
-.m4::before {
-  content: "";
-  position: absolute;
-  left: 60px;
-  top: -42px;
-  width: 98px;
-  height: 62px;
-  background: #4faf3f;
-  border-radius: 50%;
-}
-
-.face::after {
-  content: "";
-  position: absolute;
-  left: 64px;
-  top: 90px;
-  width: 20px;
-  height: 20px;
-  background: #222;
-  border-radius: 50%;
-  box-shadow: 70px 0 0 #222;
-}
-
-.game {
-  position: relative;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.counter {
-  font-size: clamp(18px, 3.8vw, 30px);
-  font-weight: 900;
-  color: #fff8cc;
-  background: rgba(34,52,92,.45);
-  padding: 10px 20px;
-  border-radius: 999px;
-  margin-bottom: 22px;
-  text-shadow: 0 2px 0 rgba(0,0,0,.25);
-}
-
-.word {
-  font-weight: 900;
-  line-height: 1;
-  text-align: center;
-  margin-bottom: 16px;
-  color: white;
-  word-break: keep-all;
-  text-shadow:
-    -5px -5px 0 #26457a,
-     5px -5px 0 #26457a,
-    -5px  5px 0 #26457a,
-     5px  5px 0 #26457a,
-     0 10px 20px rgba(0,0,0,.32);
-}
-
-.buttons {
-  display: flex;
-  gap: 18px;
-  width: min(92vw, 820px);
-}
-
-button {
-  flex: 1;
-  min-height: 78px;
-  border: 4px solid #233e77;
-  border-radius: 28px;
-  background: linear-gradient(180deg, #ffd84a, #ffca1c);
-  color: #233e77;
-  font-size: clamp(26px, 6vw, 44px);
-  font-weight: 900;
-  box-shadow: 0 8px 0 #c69a11, 0 12px 24px rgba(0,0,0,.2);
-}
-
-button:active {
-  transform: translateY(3px);
-  box-shadow: 0 5px 0 #c69a11;
-}
-
-.prev {
-  background: linear-gradient(180deg, #ff6464, #ef3e3e);
-  color: white;
-  border-color: #7e1b1b;
-  box-shadow: 0 8px 0 #b22828, 0 12px 24px rgba(0,0,0,.2);
-}
+html,body{margin:0;width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei",Arial,sans-serif}
+body{overflow:hidden;color:white;background:radial-gradient(circle at 18% 20%,rgba(255,255,255,.9) 0 45px,transparent 46px),radial-gradient(circle at 80% 18%,rgba(255,255,255,.9) 0 55px,transparent 56px),linear-gradient(180deg,#75c8ff 0%,#a8e0ff 46%,#79d36a 46%,#4caf50 100%)}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.12}
+.monster{position:absolute;width:190px;height:190px;border-radius:50%;filter:drop-shadow(0 12px 18px rgba(0,0,0,.2))}
+.m1{left:4vw;top:12vh;background:#ffd84a}
+.m1:before{content:"";position:absolute;left:34px;top:-48px;width:34px;height:95px;background:#ffd84a;transform:rotate(-25deg);border-radius:50%;box-shadow:100px 40px 0 #ffd84a}
+.m2{right:5vw;top:14vh;background:#6bc9ff}
+.m2:before{content:"";position:absolute;left:40px;top:-24px;width:40px;height:58px;background:#6bc9ff;border-radius:50%;box-shadow:88px 0 0 #6bc9ff}
+.m3{left:6vw;bottom:10vh;background:#ff9a42}
+.m4{right:7vw;bottom:10vh;background:#78d85a}
+.face:after{content:"";position:absolute;left:55px;top:78px;width:16px;height:16px;background:#222;border-radius:50%;box-shadow:60px 0 0 #222}
+.game{position:relative;z-index:1;width:100vw;height:100vh;box-sizing:border-box;padding:14px 16px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.counter{font-size:clamp(18px,3.8vw,30px);font-weight:900;color:#fff8cc;background:rgba(34,52,92,.48);padding:9px 18px;border-radius:999px;margin-bottom:4px;text-shadow:0 2px 0 rgba(0,0,0,.25)}
+.emoji{font-size:clamp(70px,15vw,125px);line-height:1;margin-bottom:0;filter:drop-shadow(0 8px 12px rgba(0,0,0,.18))}
+.word{font-weight:900;line-height:.95;text-align:center;margin-bottom:6px;color:white;word-break:keep-all;text-shadow:-5px -5px 0 #26457a,5px -5px 0 #26457a,-5px 5px 0 #26457a,5px 5px 0 #26457a,0 10px 20px rgba(0,0,0,.30)}
+.zhuyin{font-size:clamp(34px,7.2vw,62px);font-weight:900;line-height:1.15;text-align:center;color:#fff8cc;margin-bottom:18px;text-shadow:0 3px 10px rgba(0,0,0,.30)}
+.buttons{display:flex;gap:14px;width:min(92vw,820px)}
+button{flex:1;min-height:74px;border:4px solid #233e77;border-radius:28px;background:linear-gradient(180deg,#ffd84a,#ffca1c);color:#233e77;font-size:clamp(26px,5.8vw,44px);font-weight:900;box-shadow:0 8px 0 #c69a11,0 12px 24px rgba(0,0,0,.2)}
+button:active{transform:translateY(3px);box-shadow:0 5px 0 #c69a11}
+.prev{background:linear-gradient(180deg,#ff6464,#ef3e3e);color:white;border-color:#7e1b1b;box-shadow:0 8px 0 #b22828,0 12px 24px rgba(0,0,0,.2)}
 </style>
 </head>
-
 <body>
-
 <div class="bg">
   <div class="monster m1 face"></div>
   <div class="monster m2 face"></div>
@@ -205,8 +37,9 @@ button:active {
 
 <main class="game">
   <div class="counter" id="counter">第 1 / 1 個詞彙</div>
-  <div class="word" id="word">開始</div>
-
+  <div class="emoji" id="emoji">🍮</div>
+  <div class="word" id="word">布丁</div>
+  <div class="zhuyin" id="zhuyin">ㄅㄨˋ ㄉㄧㄥ</div>
   <div class="buttons">
     <button class="prev" onclick="prevWord()">上一個</button>
     <button onclick="nextWord()">下一個</button>
@@ -214,45 +47,304 @@ button:active {
 </main>
 
 <script>
-const words = [
-  "爸爸","媽媽","哥哥","姐姐","弟弟","妹妹","老師","同學","朋友","醫生","護士","警察","消防員","司機","店員","廚師","農夫","郵差","船長","機長",
-  "小孩","嬰兒","爺爺","奶奶","阿公","阿嬤","叔叔","阿姨","客人","老闆",
+const items = [
+{"word":"爸爸","zhuyin":"ㄅㄚˋ ㄅㄚˋ","emoji":"👨"},
+{"word":"媽媽","zhuyin":"ㄇㄚ ㄇㄚ","emoji":"👩"},
+{"word":"哥哥","zhuyin":"ㄍㄜ ㄍㄜ","emoji":"👦"},
+{"word":"姐姐","zhuyin":"ㄐㄧㄝˇ ㄐㄧㄝˇ","emoji":"👧"},
+{"word":"弟弟","zhuyin":"ㄉㄧˋ ㄉㄧˋ","emoji":"🧒"},
+{"word":"妹妹","zhuyin":"ㄇㄟˋ ㄇㄟˋ","emoji":"👧"},
+{"word":"老師","zhuyin":"ㄌㄠˇ ㄕ","emoji":"👩‍🏫"},
+{"word":"同學","zhuyin":"ㄊㄨㄥˊ ㄒㄩㄝˊ","emoji":"🧑"},
+{"word":"朋友","zhuyin":"ㄆㄥˊ ㄧㄡˇ","emoji":"🧑‍🤝‍🧑"},
+{"word":"醫生","zhuyin":"ㄧ ㄕㄥ","emoji":"🧑‍⚕️"},
+{"word":"護士","zhuyin":"ㄏㄨˋ ㄕˋ","emoji":"👩‍⚕️"},
+{"word":"警察","zhuyin":"ㄐㄧㄥˇ ㄔㄚˊ","emoji":"👮"},
+{"word":"消防員","zhuyin":"ㄒㄧㄠ ㄈㄤˊ ㄩㄢˊ","emoji":"👨‍🚒"},
+{"word":"廚師","zhuyin":"ㄔㄨˊ ㄕ","emoji":"👨‍🍳"},
+{"word":"司機","zhuyin":"ㄙ ㄐㄧ","emoji":"🧑‍✈️"},
+{"word":"店員","zhuyin":"ㄉㄧㄢˋ ㄩㄢˊ","emoji":"🧑‍💼"},
+{"word":"小孩","zhuyin":"ㄒㄧㄠˇ ㄏㄞˊ","emoji":"🧒"},
+{"word":"嬰兒","zhuyin":"ㄧㄥ ㄦˊ","emoji":"👶"},
+{"word":"爺爺","zhuyin":"ㄧㄝˊ ㄧㄝˊ","emoji":"👴"},
+{"word":"奶奶","zhuyin":"ㄋㄞˇ ㄋㄞˇ","emoji":"👵"},
+{"word":"阿公","zhuyin":"ㄚ ㄍㄨㄥ","emoji":"👴"},
+{"word":"阿嬤","zhuyin":"ㄚ ㄇㄚˋ","emoji":"👵"},
+{"word":"叔叔","zhuyin":"ㄕㄨˊ ㄕㄨ˙","emoji":"👨"},
+{"word":"阿姨","zhuyin":"ㄚ ㄧˊ","emoji":"👩"},
 
-  "白飯","炒飯","飯糰","便當","麵包","吐司","蛋糕","餅乾","布丁","糖果","棉花糖","巧克力","冰淇淋","爆米花","泡麵","牛肉麵","麵線","水餃","湯圓","粽子",
-  "漢堡","薯條","披薩","熱狗","雞排","雞腿","雞蛋","茶葉蛋","火鍋","貢丸","蘿蔔糕","蚵仔煎","鹹酥雞","三明治","壽司","起司","果凍","優格","奶油","蜂蜜",
-  "蘋果","香蕉","西瓜","草莓","葡萄","芒果","鳳梨","橘子","柳丁","木瓜","檸檬","番茄","玉米","南瓜","白菜","青菜","茄子","蘿蔔","苦瓜","絲瓜","黃瓜",
-  "可樂","牛奶","豆漿","果汁","奶茶","綠茶","咖哩","米飯","椰子","榴槤",
+{"word":"白飯","zhuyin":"ㄅㄞˊ ㄈㄢˋ","emoji":"🍚"},
+{"word":"炒飯","zhuyin":"ㄔㄠˇ ㄈㄢˋ","emoji":"🍚"},
+{"word":"飯糰","zhuyin":"ㄈㄢˋ ㄊㄨㄢˊ","emoji":"🍙"},
+{"word":"便當","zhuyin":"ㄅㄧㄢˋ ㄉㄤ","emoji":"🍱"},
+{"word":"麵包","zhuyin":"ㄇㄧㄢˋ ㄅㄠ","emoji":"🍞"},
+{"word":"吐司","zhuyin":"ㄊㄨˇ ㄙ","emoji":"🍞"},
+{"word":"蛋糕","zhuyin":"ㄉㄢˋ ㄍㄠ","emoji":"🍰"},
+{"word":"餅乾","zhuyin":"ㄅㄧㄥˇ ㄍㄢ","emoji":"🍪"},
+{"word":"布丁","zhuyin":"ㄅㄨˋ ㄉㄧㄥ","emoji":"🍮"},
+{"word":"糖果","zhuyin":"ㄊㄤˊ ㄍㄨㄛˇ","emoji":"🍬"},
+{"word":"巧克力","zhuyin":"ㄑㄧㄠˇ ㄎㄜˋ ㄌㄧˋ","emoji":"🍫"},
+{"word":"冰淇淋","zhuyin":"ㄅㄧㄥ ㄑㄧˊ ㄌㄧㄣˊ","emoji":"🍦"},
+{"word":"爆米花","zhuyin":"ㄅㄠˋ ㄇㄧˇ ㄏㄨㄚ","emoji":"🍿"},
+{"word":"泡麵","zhuyin":"ㄆㄠˋ ㄇㄧㄢˋ","emoji":"🍜"},
+{"word":"牛肉麵","zhuyin":"ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ","emoji":"🍜"},
+{"word":"水餃","zhuyin":"ㄕㄨㄟˇ ㄐㄧㄠˇ","emoji":"🥟"},
+{"word":"湯圓","zhuyin":"ㄊㄤ ㄩㄢˊ","emoji":"🍡"},
+{"word":"粽子","zhuyin":"ㄗㄨㄥˋ ㄗ˙","emoji":"🍙"},
+{"word":"漢堡","zhuyin":"ㄏㄢˋ ㄅㄠˇ","emoji":"🍔"},
+{"word":"薯條","zhuyin":"ㄕㄨˇ ㄊㄧㄠˊ","emoji":"🍟"},
+{"word":"披薩","zhuyin":"ㄆㄧ ㄙㄚˋ","emoji":"🍕"},
+{"word":"熱狗","zhuyin":"ㄖㄜˋ ㄍㄡˇ","emoji":"🌭"},
+{"word":"雞蛋","zhuyin":"ㄐㄧ ㄉㄢˋ","emoji":"🥚"},
+{"word":"雞腿","zhuyin":"ㄐㄧ ㄊㄨㄟˇ","emoji":"🍗"},
+{"word":"雞排","zhuyin":"ㄐㄧ ㄆㄞˊ","emoji":"🍗"},
+{"word":"火鍋","zhuyin":"ㄏㄨㄛˇ ㄍㄨㄛ","emoji":"🍲"},
+{"word":"貢丸","zhuyin":"ㄍㄨㄥˋ ㄨㄢˊ","emoji":"🍡"},
+{"word":"蘿蔔糕","zhuyin":"ㄌㄨㄛˊ ㄅㄛ˙ ㄍㄠ","emoji":"🍘"},
+{"word":"三明治","zhuyin":"ㄙㄢ ㄇㄧㄥˊ ㄓˋ","emoji":"🥪"},
+{"word":"壽司","zhuyin":"ㄕㄡˋ ㄙ","emoji":"🍣"},
+{"word":"起司","zhuyin":"ㄑㄧˇ ㄙ","emoji":"🧀"},
+{"word":"果凍","zhuyin":"ㄍㄨㄛˇ ㄉㄨㄥˋ","emoji":"🍮"},
+{"word":"奶油","zhuyin":"ㄋㄞˇ ㄧㄡˊ","emoji":"🧈"},
+{"word":"蜂蜜","zhuyin":"ㄈㄥ ㄇㄧˋ","emoji":"🍯"},
+{"word":"茶葉蛋","zhuyin":"ㄔㄚˊ ㄧㄝˋ ㄉㄢˋ","emoji":"🥚"},
+{"word":"豆花","zhuyin":"ㄉㄡˋ ㄏㄨㄚ","emoji":"🍮"},
+{"word":"豆漿","zhuyin":"ㄉㄡˋ ㄐㄧㄤ","emoji":"🥛"},
+{"word":"牛奶","zhuyin":"ㄋㄧㄡˊ ㄋㄞˇ","emoji":"🥛"},
+{"word":"果汁","zhuyin":"ㄍㄨㄛˇ ㄓ","emoji":"🧃"},
+{"word":"可樂","zhuyin":"ㄎㄜˇ ㄌㄜˋ","emoji":"🥤"},
+{"word":"綠茶","zhuyin":"ㄌㄩˋ ㄔㄚˊ","emoji":"🍵"},
+{"word":"奶茶","zhuyin":"ㄋㄞˇ ㄔㄚˊ","emoji":"🧋"},
 
-  "小狗","貓咪","兔子","老鼠","老虎","獅子","大象","猴子","熊貓","企鵝","海豚","鯨魚","烏龜","青蛙","蝴蝶","蜜蜂","螞蟻","鴨子","孔雀","斑馬",
-  "鱷魚","河馬","無尾熊","貓頭鷹","金魚","章魚","螃蟹","蛇","蝸牛","公雞","母雞","小鳥","松鼠","狐狸","綿羊","乳牛","馬","豬","恐龍",
-  "長頸鹿","袋鼠","刺蝟","水母","蝦子","烏鴉","鴿子","羊","牛","雞","鵝","蠶寶寶","毛毛蟲","蜘蛛","蝙蝠","虎鯨",
+{"word":"蘋果","zhuyin":"ㄆㄧㄥˊ ㄍㄨㄛˇ","emoji":"🍎"},
+{"word":"香蕉","zhuyin":"ㄒㄧㄤ ㄐㄧㄠ","emoji":"🍌"},
+{"word":"西瓜","zhuyin":"ㄒㄧ ㄍㄨㄚ","emoji":"🍉"},
+{"word":"草莓","zhuyin":"ㄘㄠˇ ㄇㄟˊ","emoji":"🍓"},
+{"word":"葡萄","zhuyin":"ㄆㄨˊ ㄊㄠˊ","emoji":"🍇"},
+{"word":"芒果","zhuyin":"ㄇㄤˊ ㄍㄨㄛˇ","emoji":"🥭"},
+{"word":"橘子","zhuyin":"ㄐㄩˊ ㄗ˙","emoji":"🍊"},
+{"word":"柳丁","zhuyin":"ㄌㄧㄡˇ ㄉㄧㄥ","emoji":"🍊"},
+{"word":"鳳梨","zhuyin":"ㄈㄥˋ ㄌㄧˊ","emoji":"🍍"},
+{"word":"檸檬","zhuyin":"ㄋㄧㄥˊ ㄇㄥˊ","emoji":"🍋"},
+{"word":"木瓜","zhuyin":"ㄇㄨˋ ㄍㄨㄚ","emoji":"🍈"},
+{"word":"番茄","zhuyin":"ㄈㄢ ㄑㄧㄝˊ","emoji":"🍅"},
+{"word":"玉米","zhuyin":"ㄩˋ ㄇㄧˇ","emoji":"🌽"},
+{"word":"南瓜","zhuyin":"ㄋㄢˊ ㄍㄨㄚ","emoji":"🎃"},
+{"word":"白菜","zhuyin":"ㄅㄞˊ ㄘㄞˋ","emoji":"🥬"},
+{"word":"青菜","zhuyin":"ㄑㄧㄥ ㄘㄞˋ","emoji":"🥬"},
+{"word":"蘿蔔","zhuyin":"ㄌㄨㄛˊ ㄅㄛ˙","emoji":"🥕"},
+{"word":"苦瓜","zhuyin":"ㄎㄨˇ ㄍㄨㄚ","emoji":"🥒"},
+{"word":"絲瓜","zhuyin":"ㄙ ㄍㄨㄚ","emoji":"🥒"},
+{"word":"黃瓜","zhuyin":"ㄏㄨㄤˊ ㄍㄨㄚ","emoji":"🥒"},
+{"word":"馬鈴薯","zhuyin":"ㄇㄚˇ ㄌㄧㄥˊ ㄕㄨˇ","emoji":"🥔"},
+{"word":"地瓜","zhuyin":"ㄉㄧˋ ㄍㄨㄚ","emoji":"🍠"},
+{"word":"洋蔥","zhuyin":"ㄧㄤˊ ㄘㄨㄥ","emoji":"🧅"},
 
-  "書包","課本","作業本","鉛筆","橡皮擦","尺","鉛筆盒","彩色筆","蠟筆","粉筆","白板","黑板","剪刀","膠水","膠帶","紙杯","紙箱","紙張","書架","故事書",
-  "圖畫紙","便條紙","書籤","圓規","三角板","字典","講桌","桌子","椅子",
+{"word":"小狗","zhuyin":"ㄒㄧㄠˇ ㄍㄡˇ","emoji":"🐶"},
+{"word":"貓咪","zhuyin":"ㄇㄠ ㄇㄧ","emoji":"🐱"},
+{"word":"兔子","zhuyin":"ㄊㄨˋ ㄗ˙","emoji":"🐰"},
+{"word":"老鼠","zhuyin":"ㄌㄠˇ ㄕㄨˇ","emoji":"🐭"},
+{"word":"老虎","zhuyin":"ㄌㄠˇ ㄏㄨˇ","emoji":"🐯"},
+{"word":"獅子","zhuyin":"ㄕ ㄗ˙","emoji":"🦁"},
+{"word":"大象","zhuyin":"ㄉㄚˋ ㄒㄧㄤˋ","emoji":"🐘"},
+{"word":"猴子","zhuyin":"ㄏㄡˊ ㄗ˙","emoji":"🐵"},
+{"word":"熊貓","zhuyin":"ㄒㄩㄥˊ ㄇㄠˊ","emoji":"🐼"},
+{"word":"企鵝","zhuyin":"ㄑㄧˋ ㄜˊ","emoji":"🐧"},
+{"word":"海豚","zhuyin":"ㄏㄞˇ ㄊㄨㄣˊ","emoji":"🐬"},
+{"word":"鯨魚","zhuyin":"ㄐㄧㄥ ㄩˊ","emoji":"🐳"},
+{"word":"金魚","zhuyin":"ㄐㄧㄣ ㄩˊ","emoji":"🐟"},
+{"word":"青蛙","zhuyin":"ㄑㄧㄥ ㄨㄚ","emoji":"🐸"},
+{"word":"蝴蝶","zhuyin":"ㄏㄨˊ ㄉㄧㄝˊ","emoji":"🦋"},
+{"word":"蜜蜂","zhuyin":"ㄇㄧˋ ㄈㄥ","emoji":"🐝"},
+{"word":"螞蟻","zhuyin":"ㄇㄚˇ ㄧˇ","emoji":"🐜"},
+{"word":"鴨子","zhuyin":"ㄧㄚ ㄗ˙","emoji":"🦆"},
+{"word":"母雞","zhuyin":"ㄇㄨˇ ㄐㄧ","emoji":"🐔"},
+{"word":"小鳥","zhuyin":"ㄒㄧㄠˇ ㄋㄧㄠˇ","emoji":"🐦"},
+{"word":"烏龜","zhuyin":"ㄨ ㄍㄨㄟ","emoji":"🐢"},
+{"word":"馬","zhuyin":"ㄇㄚˇ","emoji":"🐴"},
+{"word":"豬","zhuyin":"ㄓㄨ","emoji":"🐷"},
+{"word":"乳牛","zhuyin":"ㄖㄨˇ ㄋㄧㄡˊ","emoji":"🐮"},
+{"word":"綿羊","zhuyin":"ㄇㄧㄢˊ ㄧㄤˊ","emoji":"🐑"},
+{"word":"松鼠","zhuyin":"ㄙㄨㄥ ㄕㄨˇ","emoji":"🐿️"},
+{"word":"狐狸","zhuyin":"ㄏㄨˊ ㄌㄧˊ","emoji":"🦊"},
+{"word":"長頸鹿","zhuyin":"ㄔㄤˊ ㄐㄧㄥˇ ㄌㄨˋ","emoji":"🦒"},
+{"word":"袋鼠","zhuyin":"ㄉㄞˋ ㄕㄨˇ","emoji":"🦘"},
+{"word":"無尾熊","zhuyin":"ㄨˊ ㄨㄟˇ ㄒㄩㄥˊ","emoji":"🐨"},
+{"word":"河馬","zhuyin":"ㄏㄜˊ ㄇㄚˇ","emoji":"🦛"},
+{"word":"斑馬","zhuyin":"ㄅㄢ ㄇㄚˇ","emoji":"🦓"},
+{"word":"孔雀","zhuyin":"ㄎㄨㄥˇ ㄑㄩㄝˋ","emoji":"🦚"},
+{"word":"章魚","zhuyin":"ㄓㄤ ㄩˊ","emoji":"🐙"},
+{"word":"螃蟹","zhuyin":"ㄆㄤˊ ㄒㄧㄝˋ","emoji":"🦀"},
+{"word":"蝦子","zhuyin":"ㄒㄧㄚ ㄗ˙","emoji":"🦐"},
+{"word":"蛇","zhuyin":"ㄕㄜˊ","emoji":"🐍"},
+{"word":"蝸牛","zhuyin":"ㄍㄨㄚ ㄋㄧㄡˊ","emoji":"🐌"},
+{"word":"貓頭鷹","zhuyin":"ㄇㄠ ㄊㄡˊ ㄧㄥ","emoji":"🦉"},
 
-  "杯子","碗","盤子","筷子","湯匙","叉子","鍋子","菜刀","水壺","便當盒","雨傘","雨衣","口罩","帽子","鞋子","襪子","外套","手套","衣服","背包",
-  "鑰匙","鏡子","時鐘","鬧鐘","手機","電腦","電視","冰箱","洗衣機","電風扇","吹風機","微波爐","烤箱","電鍋","電話","相機","手錶","眼鏡","牙刷",
-  "牙膏","毛巾","肥皂","枕頭","棉被","床","沙發","垃圾桶","衛生紙","掃把","拖把","水桶","水龍頭","門","窗戶","窗簾","樓梯","屋頂","地板",
+{"word":"書包","zhuyin":"ㄕㄨ ㄅㄠ","emoji":"🎒"},
+{"word":"課本","zhuyin":"ㄎㄜˋ ㄅㄣˇ","emoji":"📘"},
+{"word":"鉛筆","zhuyin":"ㄑㄧㄢ ㄅㄧˇ","emoji":"✏️"},
+{"word":"橡皮擦","zhuyin":"ㄒㄧㄤˋ ㄆㄧˊ ㄘㄚ","emoji":"◻️"},
+{"word":"尺","zhuyin":"ㄔˇ","emoji":"📏"},
+{"word":"鉛筆盒","zhuyin":"ㄑㄧㄢ ㄅㄧˇ ㄏㄜˊ","emoji":"🖍️"},
+{"word":"彩色筆","zhuyin":"ㄘㄞˇ ㄙㄜˋ ㄅㄧˇ","emoji":"🖍️"},
+{"word":"蠟筆","zhuyin":"ㄌㄚˋ ㄅㄧˇ","emoji":"🖍️"},
+{"word":"白板","zhuyin":"ㄅㄞˊ ㄅㄢˇ","emoji":"🪧"},
+{"word":"黑板","zhuyin":"ㄏㄟ ㄅㄢˇ","emoji":"⬛"},
+{"word":"剪刀","zhuyin":"ㄐㄧㄢˇ ㄉㄠ","emoji":"✂️"},
+{"word":"膠水","zhuyin":"ㄐㄧㄠ ㄕㄨㄟˇ","emoji":"🧴"},
+{"word":"膠帶","zhuyin":"ㄐㄧㄠ ㄉㄞˋ","emoji":"📦"},
+{"word":"書架","zhuyin":"ㄕㄨ ㄐㄧㄚˋ","emoji":"📚"},
+{"word":"桌子","zhuyin":"ㄓㄨㄛ ㄗ˙","emoji":"🪑"},
+{"word":"椅子","zhuyin":"ㄧˇ ㄗ˙","emoji":"🪑"},
+{"word":"字典","zhuyin":"ㄗˋ ㄉㄧㄢˇ","emoji":"📖"},
 
-  "玩具","娃娃","積木","拼圖","卡片","撲克牌","骰子","皮球","氣球","泡泡","風箏","溜滑梯","鞦韆","球鞋","運動鞋","望遠鏡","日曆","日記","信封","郵票",
+{"word":"杯子","zhuyin":"ㄅㄟ ㄗ˙","emoji":"🥤"},
+{"word":"碗","zhuyin":"ㄨㄢˇ","emoji":"🥣"},
+{"word":"盤子","zhuyin":"ㄆㄢˊ ㄗ˙","emoji":"🍽️"},
+{"word":"筷子","zhuyin":"ㄎㄨㄞˋ ㄗ˙","emoji":"🥢"},
+{"word":"湯匙","zhuyin":"ㄊㄤ ㄔˊ","emoji":"🥄"},
+{"word":"叉子","zhuyin":"ㄔㄚ ㄗ˙","emoji":"🍴"},
+{"word":"鍋子","zhuyin":"ㄍㄨㄛ ㄗ˙","emoji":"🍲"},
+{"word":"菜刀","zhuyin":"ㄘㄞˋ ㄉㄠ","emoji":"🔪"},
+{"word":"水壺","zhuyin":"ㄕㄨㄟˇ ㄏㄨˊ","emoji":"🫗"},
+{"word":"便當盒","zhuyin":"ㄅㄧㄢˋ ㄉㄤ ㄏㄜˊ","emoji":"🍱"},
+{"word":"雨傘","zhuyin":"ㄩˇ ㄙㄢˇ","emoji":"☂️"},
+{"word":"雨衣","zhuyin":"ㄩˇ ㄧ","emoji":"🧥"},
+{"word":"口罩","zhuyin":"ㄎㄡˇ ㄓㄠˋ","emoji":"😷"},
+{"word":"帽子","zhuyin":"ㄇㄠˋ ㄗ˙","emoji":"🧢"},
+{"word":"鞋子","zhuyin":"ㄒㄧㄝˊ ㄗ˙","emoji":"👟"},
+{"word":"襪子","zhuyin":"ㄨㄚˋ ㄗ˙","emoji":"🧦"},
+{"word":"衣服","zhuyin":"ㄧ ㄈㄨˊ","emoji":"👕"},
+{"word":"外套","zhuyin":"ㄨㄞˋ ㄊㄠˋ","emoji":"🧥"},
+{"word":"手套","zhuyin":"ㄕㄡˇ ㄊㄠˋ","emoji":"🧤"},
+{"word":"背包","zhuyin":"ㄅㄟ ㄅㄠ","emoji":"🎒"},
+{"word":"鑰匙","zhuyin":"ㄧㄠˋ ㄕ˙","emoji":"🔑"},
+{"word":"鏡子","zhuyin":"ㄐㄧㄥˋ ㄗ˙","emoji":"🪞"},
+{"word":"時鐘","zhuyin":"ㄕˊ ㄓㄨㄥ","emoji":"🕒"},
+{"word":"鬧鐘","zhuyin":"ㄋㄠˋ ㄓㄨㄥ","emoji":"⏰"},
+{"word":"手機","zhuyin":"ㄕㄡˇ ㄐㄧ","emoji":"📱"},
+{"word":"電腦","zhuyin":"ㄉㄧㄢˋ ㄋㄠˇ","emoji":"💻"},
+{"word":"電視","zhuyin":"ㄉㄧㄢˋ ㄕˋ","emoji":"📺"},
+{"word":"冰箱","zhuyin":"ㄅㄧㄥ ㄒㄧㄤ","emoji":"🧊"},
+{"word":"洗衣機","zhuyin":"ㄒㄧˇ ㄧ ㄐㄧ","emoji":"🧺"},
+{"word":"電風扇","zhuyin":"ㄉㄧㄢˋ ㄈㄥ ㄕㄢˋ","emoji":"🌬️"},
+{"word":"牙刷","zhuyin":"ㄧㄚˊ ㄕㄨㄚ","emoji":"🪥"},
+{"word":"牙膏","zhuyin":"ㄧㄚˊ ㄍㄠ","emoji":"🪥"},
+{"word":"毛巾","zhuyin":"ㄇㄠˊ ㄐㄧㄣ","emoji":"🧻"},
+{"word":"肥皂","zhuyin":"ㄈㄟˊ ㄗㄠˋ","emoji":"🧼"},
+{"word":"枕頭","zhuyin":"ㄓㄣˇ ㄊㄡˊ","emoji":"🛏️"},
+{"word":"棉被","zhuyin":"ㄇㄧㄢˊ ㄅㄟˋ","emoji":"🛏️"},
+{"word":"床","zhuyin":"ㄔㄨㄤˊ","emoji":"🛏️"},
+{"word":"沙發","zhuyin":"ㄕㄚ ㄈㄚ","emoji":"🛋️"},
+{"word":"垃圾桶","zhuyin":"ㄌㄜˋ ㄙㄜˋ ㄊㄨㄥˇ","emoji":"🗑️"},
+{"word":"衛生紙","zhuyin":"ㄨㄟˋ ㄕㄥ ㄓˇ","emoji":"🧻"},
+{"word":"掃把","zhuyin":"ㄙㄠˋ ㄅㄚˇ","emoji":"🧹"},
+{"word":"拖把","zhuyin":"ㄊㄨㄛ ㄅㄚˇ","emoji":"🧹"},
+{"word":"水桶","zhuyin":"ㄕㄨㄟˇ ㄊㄨㄥˇ","emoji":"🪣"},
+{"word":"門","zhuyin":"ㄇㄣˊ","emoji":"🚪"},
+{"word":"窗戶","zhuyin":"ㄔㄨㄤ ㄏㄨˋ","emoji":"🪟"},
+{"word":"樓梯","zhuyin":"ㄌㄡˊ ㄊㄧ","emoji":"🪜"},
+{"word":"地板","zhuyin":"ㄉㄧˋ ㄅㄢˇ","emoji":"🟫"},
 
-  "公車","火車","飛機","汽車","機車","腳踏車","捷運","高鐵","船","輪船","帆船","救護車","消防車","警車","計程車","垃圾車","卡車","校車","直升機","降落傘",
+{"word":"玩具","zhuyin":"ㄨㄢˊ ㄐㄩˋ","emoji":"🧸"},
+{"word":"娃娃","zhuyin":"ㄨㄚˊ ㄨㄚˊ","emoji":"🪆"},
+{"word":"積木","zhuyin":"ㄐㄧ ㄇㄨˋ","emoji":"🧱"},
+{"word":"拼圖","zhuyin":"ㄆㄧㄣ ㄊㄨˊ","emoji":"🧩"},
+{"word":"卡片","zhuyin":"ㄎㄚˇ ㄆㄧㄢˋ","emoji":"🃏"},
+{"word":"氣球","zhuyin":"ㄑㄧˋ ㄑㄧㄡˊ","emoji":"🎈"},
+{"word":"泡泡","zhuyin":"ㄆㄠˋ ㄆㄠˋ","emoji":"🫧"},
+{"word":"風箏","zhuyin":"ㄈㄥ ㄓㄥ","emoji":"🪁"},
+{"word":"溜滑梯","zhuyin":"ㄌㄧㄡ ㄏㄨㄚˊ ㄊㄧ","emoji":"🛝"},
+{"word":"鞦韆","zhuyin":"ㄑㄧㄡ ㄑㄧㄢ","emoji":"🛝"},
+{"word":"籃球","zhuyin":"ㄌㄢˊ ㄑㄧㄡˊ","emoji":"🏀"},
+{"word":"棒球","zhuyin":"ㄅㄤˋ ㄑㄧㄡˊ","emoji":"⚾"},
+{"word":"足球","zhuyin":"ㄗㄨˊ ㄑㄧㄡˊ","emoji":"⚽"},
+{"word":"網球","zhuyin":"ㄨㄤˇ ㄑㄧㄡˊ","emoji":"🎾"},
+{"word":"羽毛球","zhuyin":"ㄩˇ ㄇㄠˊ ㄑㄧㄡˊ","emoji":"🏸"},
+{"word":"球拍","zhuyin":"ㄑㄧㄡˊ ㄆㄞ","emoji":"🏓"},
+{"word":"鋼琴","zhuyin":"ㄍㄤ ㄑㄧㄣˊ","emoji":"🎹"},
+{"word":"鼓","zhuyin":"ㄍㄨˇ","emoji":"🥁"},
 
-  "學校","教室","操場","圖書館","廁所","餐廳","公園","動物園","海邊","游泳池","醫院","警察局","消防局","超市","市場","夜市","車站","電影院","博物館","郵局",
-  "便利商店","銀行","書店","廚房","客廳","房間","浴室","陽台","山","河邊","機場","寺廟","城堡","鬼屋","迷宮","森林","農場","花園","樂園","溫泉",
-  "水上市場","菜市場","五金行","馬路","路燈","鐵橋","鐵門","鐵路","大門","門口",
+{"word":"公車","zhuyin":"ㄍㄨㄥ ㄔㄜ","emoji":"🚌"},
+{"word":"火車","zhuyin":"ㄏㄨㄛˇ ㄔㄜ","emoji":"🚆"},
+{"word":"飛機","zhuyin":"ㄈㄟ ㄐㄧ","emoji":"✈️"},
+{"word":"汽車","zhuyin":"ㄑㄧˋ ㄔㄜ","emoji":"🚗"},
+{"word":"機車","zhuyin":"ㄐㄧ ㄔㄜ","emoji":"🛵"},
+{"word":"腳踏車","zhuyin":"ㄐㄧㄠˇ ㄊㄚˋ ㄔㄜ","emoji":"🚲"},
+{"word":"捷運","zhuyin":"ㄐㄧㄝˊ ㄩㄣˋ","emoji":"🚇"},
+{"word":"船","zhuyin":"ㄔㄨㄢˊ","emoji":"🚢"},
+{"word":"救護車","zhuyin":"ㄐㄧㄡˋ ㄏㄨˋ ㄔㄜ","emoji":"🚑"},
+{"word":"消防車","zhuyin":"ㄒㄧㄠ ㄈㄤˊ ㄔㄜ","emoji":"🚒"},
+{"word":"警車","zhuyin":"ㄐㄧㄥˇ ㄔㄜ","emoji":"🚓"},
+{"word":"計程車","zhuyin":"ㄐㄧˋ ㄔㄥˊ ㄔㄜ","emoji":"🚕"},
+{"word":"卡車","zhuyin":"ㄎㄚˇ ㄔㄜ","emoji":"🚚"},
+{"word":"校車","zhuyin":"ㄒㄧㄠˋ ㄔㄜ","emoji":"🚌"},
+{"word":"直升機","zhuyin":"ㄓˊ ㄕㄥ ㄐㄧ","emoji":"🚁"},
 
-  "太陽","月亮","星星","地球","天空","雲朵","彩虹","雨","風","颱風","地震","瀑布","石頭","木頭","樹木","樹葉","花朵","花瓶","蓮花","梅花",
-  "竹子","種子","稻草","泥土","沙子","海水","春天","夏天","秋天","冬天","早上","晚上","星期一","星期日","雪人","火山",
+{"word":"學校","zhuyin":"ㄒㄩㄝˊ ㄒㄧㄠˋ","emoji":"🏫"},
+{"word":"教室","zhuyin":"ㄐㄧㄠˋ ㄕˋ","emoji":"🏫"},
+{"word":"操場","zhuyin":"ㄘㄠ ㄔㄤˇ","emoji":"🏃"},
+{"word":"圖書館","zhuyin":"ㄊㄨˊ ㄕㄨ ㄍㄨㄢˇ","emoji":"📚"},
+{"word":"廁所","zhuyin":"ㄘㄜˋ ㄙㄨㄛˇ","emoji":"🚻"},
+{"word":"餐廳","zhuyin":"ㄘㄢ ㄊㄧㄥ","emoji":"🍽️"},
+{"word":"公園","zhuyin":"ㄍㄨㄥ ㄩㄢˊ","emoji":"🌳"},
+{"word":"動物園","zhuyin":"ㄉㄨㄥˋ ㄨˋ ㄩㄢˊ","emoji":"🦒"},
+{"word":"海邊","zhuyin":"ㄏㄞˇ ㄅㄧㄢ","emoji":"🏖️"},
+{"word":"游泳池","zhuyin":"ㄧㄡˊ ㄩㄥˇ ㄔˊ","emoji":"🏊"},
+{"word":"醫院","zhuyin":"ㄧ ㄩㄢˋ","emoji":"🏥"},
+{"word":"郵局","zhuyin":"ㄧㄡˊ ㄐㄩˊ","emoji":"🏣"},
+{"word":"書店","zhuyin":"ㄕㄨ ㄉㄧㄢˋ","emoji":"🏬"},
+{"word":"超市","zhuyin":"ㄔㄠ ㄕˋ","emoji":"🛒"},
+{"word":"市場","zhuyin":"ㄕˋ ㄔㄤˇ","emoji":"🛒"},
+{"word":"夜市","zhuyin":"ㄧㄝˋ ㄕˋ","emoji":"🏮"},
+{"word":"車站","zhuyin":"ㄔㄜ ㄓㄢˋ","emoji":"🚉"},
+{"word":"電影院","zhuyin":"ㄉㄧㄢˋ ㄧㄥˇ ㄩㄢˋ","emoji":"🎬"},
+{"word":"便利商店","zhuyin":"ㄅㄧㄢˋ ㄌㄧˋ ㄕㄤ ㄉㄧㄢˋ","emoji":"🏪"},
+{"word":"銀行","zhuyin":"ㄧㄣˊ ㄏㄤˊ","emoji":"🏦"},
+{"word":"廚房","zhuyin":"ㄔㄨˊ ㄈㄤˊ","emoji":"🍳"},
+{"word":"客廳","zhuyin":"ㄎㄜˋ ㄊㄧㄥ","emoji":"🛋️"},
+{"word":"房間","zhuyin":"ㄈㄤˊ ㄐㄧㄢ","emoji":"🛏️"},
+{"word":"浴室","zhuyin":"ㄩˋ ㄕˋ","emoji":"🛁"},
+{"word":"陽台","zhuyin":"ㄧㄤˊ ㄊㄞˊ","emoji":"🏠"},
+{"word":"山","zhuyin":"ㄕㄢ","emoji":"⛰️"},
+{"word":"河邊","zhuyin":"ㄏㄜˊ ㄅㄧㄢ","emoji":"🏞️"},
+{"word":"機場","zhuyin":"ㄐㄧ ㄔㄤˇ","emoji":"🛫"},
+{"word":"花園","zhuyin":"ㄏㄨㄚ ㄩㄢˊ","emoji":"🌷"},
+{"word":"農場","zhuyin":"ㄋㄨㄥˊ ㄔㄤˇ","emoji":"🚜"},
+{"word":"森林","zhuyin":"ㄙㄣ ㄌㄧㄣˊ","emoji":"🌲"},
+{"word":"樂園","zhuyin":"ㄌㄜˋ ㄩㄢˊ","emoji":"🎡"},
 
-  "過年","紅包","鞭炮","年糕","年獸","中秋節","月餅","端午節","龍舟","聖誕樹","聖誕節","生日","禮物","煙火","國旗","台灣","越南","泰國","印尼","菲律賓",
-  "馬來西亞","新加坡","緬甸","柬埔寨","傳統服裝","香蕉葉","元宵","燈籠","園遊會",
-
-  "籃球","棒球","足球","網球","羽毛球","乒乓球","球拍","象棋","鋼琴","口琴","鼓棒","魔術","寶藏","鑽石","珠子","夾子","抽屜","盒子","袋子",
-  "口袋","翅膀","鼻子","眼睛","嘴巴","頭髮","指甲","輪胎","骨頭","荷包蛋","關東煮","甜甜圈","蔥油餅","千層蛋糕","招財貓","機器人","七巧板"
+{"word":"太陽","zhuyin":"ㄊㄞˋ ㄧㄤˊ","emoji":"☀️"},
+{"word":"月亮","zhuyin":"ㄩㄝˋ ㄌㄧㄤˋ","emoji":"🌙"},
+{"word":"星星","zhuyin":"ㄒㄧㄥ ㄒㄧㄥ","emoji":"⭐"},
+{"word":"地球","zhuyin":"ㄉㄧˋ ㄑㄧㄡˊ","emoji":"🌍"},
+{"word":"天空","zhuyin":"ㄊㄧㄢ ㄎㄨㄥ","emoji":"☁️"},
+{"word":"雲朵","zhuyin":"ㄩㄣˊ ㄉㄨㄛˇ","emoji":"☁️"},
+{"word":"彩虹","zhuyin":"ㄘㄞˇ ㄏㄨㄥˊ","emoji":"🌈"},
+{"word":"下雨","zhuyin":"ㄒㄧㄚˋ ㄩˇ","emoji":"🌧️"},
+{"word":"颱風","zhuyin":"ㄊㄞˊ ㄈㄥ","emoji":"🌀"},
+{"word":"地震","zhuyin":"ㄉㄧˋ ㄓㄣˋ","emoji":"🏚️"},
+{"word":"石頭","zhuyin":"ㄕˊ ㄊㄡˊ","emoji":"🪨"},
+{"word":"花朵","zhuyin":"ㄏㄨㄚ ㄉㄨㄛˇ","emoji":"🌸"},
+{"word":"樹木","zhuyin":"ㄕㄨˋ ㄇㄨˋ","emoji":"🌳"},
+{"word":"樹葉","zhuyin":"ㄕㄨˋ ㄧㄝˋ","emoji":"🍃"},
+{"word":"竹子","zhuyin":"ㄓㄨˊ ㄗ˙","emoji":"🎋"},
+{"word":"春天","zhuyin":"ㄔㄨㄣ ㄊㄧㄢ","emoji":"🌷"},
+{"word":"夏天","zhuyin":"ㄒㄧㄚˋ ㄊㄧㄢ","emoji":"🍉"},
+{"word":"秋天","zhuyin":"ㄑㄧㄡ ㄊㄧㄢ","emoji":"🍁"},
+{"word":"冬天","zhuyin":"ㄉㄨㄥ ㄊㄧㄢ","emoji":"⛄"},
+{"word":"早上","zhuyin":"ㄗㄠˇ ㄕㄤˋ","emoji":"🌅"},
+{"word":"晚上","zhuyin":"ㄨㄢˇ ㄕㄤˋ","emoji":"🌙"},
+{"word":"生日","zhuyin":"ㄕㄥ ㄖˋ","emoji":"🎂"},
+{"word":"過年","zhuyin":"ㄍㄨㄛˋ ㄋㄧㄢˊ","emoji":"🧧"},
+{"word":"紅包","zhuyin":"ㄏㄨㄥˊ ㄅㄠ","emoji":"🧧"},
+{"word":"月餅","zhuyin":"ㄩㄝˋ ㄅㄧㄥˇ","emoji":"🥮"},
+{"word":"龍舟","zhuyin":"ㄌㄨㄥˊ ㄓㄡ","emoji":"🚣"},
+{"word":"國旗","zhuyin":"ㄍㄨㄛˊ ㄑㄧˊ","emoji":"🚩"},
+{"word":"台灣","zhuyin":"ㄊㄞˊ ㄨㄢ","emoji":"🇹🇼"}
 ];
 
-let order = [...words];
+let order = [...Array(items.length).keys()];
 
 for (let i = order.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
@@ -262,27 +354,28 @@ for (let i = order.length - 1; i > 0; i--) {
 let index = 0;
 
 function update() {
-  const currentWord = order[index];
+  const current = items[order[index]];
   const wordEl = document.getElementById("word");
-  const counterEl = document.getElementById("counter");
 
-  wordEl.textContent = currentWord;
-  counterEl.textContent = `第 ${index + 1} / ${order.length} 個詞彙`;
+  document.getElementById("zhuyin").textContent = current.zhuyin;
+  document.getElementById("emoji").textContent = current.emoji;
+  document.getElementById("counter").textContent = `第 ${index + 1} / ${order.length} 個詞彙`;
 
-  const len = [...currentWord].length;
+  wordEl.textContent = current.word;
+
+  const len = [...current.word].length;
 
   if (len <= 2) {
-  wordEl.style.fontSize = "clamp(180px, 43vw, 400px)";
-  wordEl.style.letterSpacing = "-0.06em";
-  }
+    wordEl.style.fontSize = "clamp(230px,50vw,460px)";
+    wordEl.style.letterSpacing = "-0.06em";
   } else if (len === 3) {
-    wordEl.style.fontSize = "clamp(145px, 34vw, 310px)";
-    wordEl.style.letterSpacing = "-0.05em";
+    wordEl.style.fontSize = "clamp(175px,38vw,330px)";
+    wordEl.style.letterSpacing = "-0.04em";
   } else if (len === 4) {
-    wordEl.style.fontSize = "clamp(118px, 28vw, 240px)";
-    wordEl.style.letterSpacing = "-0.03em";
+    wordEl.style.fontSize = "clamp(138px,29vw,260px)";
+    wordEl.style.letterSpacing = "-0.02em";
   } else {
-    wordEl.style.fontSize = "clamp(92px, 20vw, 180px)";
+    wordEl.style.fontSize = "clamp(108px,22vw,200px)";
     wordEl.style.letterSpacing = "0";
   }
 }
@@ -301,6 +394,5 @@ function prevWord() {
 
 update();
 </script>
-
 </body>
 </html>
