@@ -264,7 +264,6 @@ const items = [
 {"word":"球拍","zhuyin":"ㄑㄧㄡˊ ㄆㄞ","emoji":"🏓"},
 {"word":"鋼琴","zhuyin":"ㄍㄤ ㄑㄧㄣˊ","emoji":"🎹"},
 {"word":"鼓","zhuyin":"ㄍㄨˇ","emoji":"🥁"},
-
 {"word":"公車","zhuyin":"ㄍㄨㄥ ㄔㄜ","emoji":"🚌"},
 {"word":"火車","zhuyin":"ㄏㄨㄛˇ ㄔㄜ","emoji":"🚆"},
 {"word":"飛機","zhuyin":"ㄈㄟ ㄐㄧ","emoji":"✈️"},
@@ -280,7 +279,6 @@ const items = [
 {"word":"卡車","zhuyin":"ㄎㄚˇ ㄔㄜ","emoji":"🚚"},
 {"word":"校車","zhuyin":"ㄒㄧㄠˋ ㄔㄜ","emoji":"🚌"},
 {"word":"直升機","zhuyin":"ㄓˊ ㄕㄥ ㄐㄧ","emoji":"🚁"},
-
 {"word":"學校","zhuyin":"ㄒㄩㄝˊ ㄒㄧㄠˋ","emoji":"🏫"},
 {"word":"教室","zhuyin":"ㄐㄧㄠˋ ㄕˋ","emoji":"🏫"},
 {"word":"操場","zhuyin":"ㄘㄠ ㄔㄤˇ","emoji":"🏃"},
@@ -313,7 +311,6 @@ const items = [
 {"word":"農場","zhuyin":"ㄋㄨㄥˊ ㄔㄤˇ","emoji":"🚜"},
 {"word":"森林","zhuyin":"ㄙㄣ ㄌㄧㄣˊ","emoji":"🌲"},
 {"word":"樂園","zhuyin":"ㄌㄜˋ ㄩㄢˊ","emoji":"🎡"},
-
 {"word":"太陽","zhuyin":"ㄊㄞˋ ㄧㄤˊ","emoji":"☀️"},
 {"word":"月亮","zhuyin":"ㄩㄝˋ ㄌㄧㄤˋ","emoji":"🌙"},
 {"word":"星星","zhuyin":"ㄒㄧㄥ ㄒㄧㄥ","emoji":"⭐"},
@@ -366,17 +363,17 @@ function update() {
   const len = [...current.word].length;
 
   if (len <= 2) {
-    wordEl.style.fontSize = "clamp(230px,50vw,460px)";
-    wordEl.style.letterSpacing = "-0.06em";
-  } else if (len === 3) {
-    wordEl.style.fontSize = "clamp(175px,38vw,330px)";
-    wordEl.style.letterSpacing = "-0.04em";
-  } else if (len === 4) {
-    wordEl.style.fontSize = "clamp(138px,29vw,260px)";
-    wordEl.style.letterSpacing = "-0.02em";
-  } else {
-    wordEl.style.fontSize = "clamp(108px,22vw,200px)";
-    wordEl.style.letterSpacing = "0";
+  wordEl.style.fontSize = "clamp(170px,38vw,340px)";
+  wordEl.style.letterSpacing = "-0.04em";
+} else if (len === 3) {
+  wordEl.style.fontSize = "clamp(130px,30vw,250px)";
+  wordEl.style.letterSpacing = "-0.03em";
+} else if (len === 4) {
+  wordEl.style.fontSize = "clamp(100px,23vw,200px)";
+  wordEl.style.letterSpacing = "-0.02em";
+} else {
+  wordEl.style.fontSize = "clamp(80px,18vw,160px)";
+  wordEl.style.letterSpacing = "0";
   }
 }
 
